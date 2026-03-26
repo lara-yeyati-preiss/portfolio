@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ordinaries — Lara Yeyati Preiss</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Archivo:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lara Yeyati Preiss</a>
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="proj-back-top">
+    <a class="proj-back" href="index.html">&#8592; All work</a>
+  </div>
+
+  <div class="proj-header">
+    <div>
+      <div class="proj-context">Data Visualization — Parsons × Smithsonian</div>
+      <h1 class="proj-title">The Ordinaries</h1>
+      <p class="proj-summary">
+        An interactive archive of the American Revolutionary period, viewed through the material traces of everyday life. Drawing from 12,667 Smithsonian records, it explores how ordinary objects offer a glimpse into how life was built, organized, and imagined.
+      </p>
+      <a class="proj-live-btn" href="https://lara-yeyati-preiss.github.io/the-ordinaries/" target="_blank">
+        See live site <span class="proj-live-arrow">&#8599;</span>
+      </a>
+    </div>
+
+    <div class="proj-meta-sidebar">
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Role</div>
+        <div class="proj-meta-value">Concept, data analysis, design, and development</div>
+      </div>
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Context</div>
+        <div class="proj-meta-value">Parsons × Smithsonian partnership</div>
+      </div>
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Data</div>
+        <div class="proj-meta-value">Smithsonian American Revolutionary Era Collections (Revolution Crossroads, CC0-1.0)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-header-divider"></div>
+
+  <div class="proj-video-section">
+    <div class="proj-video-container proj-video-container--vimeo-large">
+      <div class="video-ratio video-ratio--clean" id="ordinaries-player-wrap">
+        <iframe
+          id="ordinaries-vimeo"
+          src="https://player.vimeo.com/video/1176709949?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="video-ordinaries">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Challenge</div>
+    <div class="proj-section-body">
+      <p>
+        The <a href="https://www.si.edu/openaccess" target="_blank">Smithsonian Open Access Initiative</a> aims to expand the utility, discoverability, and accessibility of the museums’ collections and data. In the context of the United States’ anniversary, the challenge was to create new entry points into the American Revolutionary collections, making this material easier to navigate and connect with at scale.
+      </p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Concept</div>
+    <div class="proj-section-body">
+      <p>
+        The Ordinaries shifts attention away from monuments and heroes and toward the objects people used in their everyday. It begins from a simple premise: what people crafted, traded, and cared for offers a glimpse into how their world was built, organized, and imagined.
+      </p>
+      <p>
+        At its core is a new classification system: a taxonomy of the ordinary, organized not by object type but by action.
+      </p>
+    </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/ordinaries-jars.png" alt="Subset of items introducing the action family classification logic"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Concept image</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Subset of items introducing the action family classification logic
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Process</div>
+    <div class="proj-section-body">
+      <p>
+        The dataset draws from the Smithsonian’s Revolution Crossroads open-access corpus: 12,667 object records and nearly 4,000 images from four museums, dating roughly from 1770 to 1810.
+      </p>
+      <p>
+        Object descriptions were cleaned and parsed in Python, with materials extracted using regex and grouped into material families. Objects were then classified by action family through a hybrid approach combining LLM-based tagging with manual review. Images were fetched dynamically via the Smithsonian Open Access API.
+      </p>
+    </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/ordinaries-database.png" alt="Smithsonian Revolution Crossroads dataset screenshot"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Dataset screenshot</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Smithsonian Revolution Crossroads dataset
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Visualization</div>
+    <div class="proj-section-body">
+      <p>
+        The site unfolds as a continuous exploration of the archive, moving from individual objects to broader patterns. It begins with a curated selection that situates artifacts within the rhythms of everyday life. An interactive treemap then opens up the full dataset, revealing a taxonomy of the ordinary across action families and materials.
+      </p>
+    </div>
+
+    <div class="section-img-full section-img-full--hero">
+      <img src="images/ordinaries-treemap-action.png" alt="Treemap of the collection by action family"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Treemap image</div>
+    </div>
+
+    <div class="section-img-full section-img-full--hero">
+      <img src="images/ordinaries-treemap-action-detail.png" alt="Treemap of the collection by action family"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Treemap image</div>
+    </div>
+
+    <div class="img-caption img-caption--hero">
+      Treemap of the collection by action family
+    </div>
+
+    <div class="proj-section-body" style="margin-top: 44px;">
+      <p>
+        The final view returns to the objects through a domestic lens: a room-by-room structure drawn from a late 19th-century American home, situating them within the spatial context of everyday life.
+      </p>
+    </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/ordinaries-floorplan.png" alt="Floor plan interface based on a historic American home plan"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Floor plan interface</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Floor plan interface based on a historic American home plan
+    </div>
+
+    <div class="proj-live-wrap proj-live-wrap--small proj-live-wrap--bottom">
+      <a class="proj-live-btn" href="https://lara-yeyati-preiss.github.io/the-ordinaries/" target="_blank">
+        See live site <span class="proj-live-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="proj-back-bottom">
+    <a class="proj-back" href="index.html">&#8592; All work</a>
+  </div>
+
+  <footer>
+    <span class="footer-year">&#169; 2025</span>
+    <a href="mailto:larayeyati@gmail.com" class="footer-email">larayeyati&#64;gmail.com</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

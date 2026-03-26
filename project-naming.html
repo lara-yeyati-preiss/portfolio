@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naming a City — Lara Yeyati Preiss</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Archivo:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lara Yeyati Preiss</a>
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="proj-back-top">
+    <a class="proj-back" href="index.html">&#8592; All work</a>
+  </div>
+
+  <div class="proj-header">
+    <div>
+      <div class="proj-context">Data Visualization — Urban Culture & NLP</div>
+
+      <h1 class="proj-title">Naming a City</h1>
+
+      <p class="proj-summary">
+        A city’s identity, written in its storefronts. Using OpenStreetMap data and textual analysis, this project maps what the names of Buenos Aires cafés, bars, libraries, and other key local venues might reveal about the city's identity.
+      </p>
+
+      <a class="proj-live-btn" href="https://lara-yeyati-preiss.github.io/naming_a_city/index.html" target="_blank">
+        See live site <span class="proj-live-arrow">&#8599;</span>
+      </a>
+    </div>
+
+    <div class="proj-meta-sidebar">
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Role</div>
+        <div class="proj-meta-value">Concept, data collection, NLP pipeline, design, and development</div>
+      </div>
+
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Context</div>
+        <div class="proj-meta-value">Independent · Parsons Major Studio</div>
+      </div>
+
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Data</div>
+        <div class="proj-meta-value">
+          OpenStreetMap (Overpass API) · Buenos Aires Open Data · Comunas en la Web
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-header-divider"></div>
+
+  <div class="proj-video-section">
+    <div class="proj-video-container proj-video-container--vimeo-large">
+      <div class="video-ratio video-ratio--clean">
+        <iframe
+          src="https://player.vimeo.com/video/1177128326?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          title="Naming a City">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Concept</div>
+    <div class="proj-section-body">
+      <p>
+        The names of a city's venues —cafés, restaurants, bars, libraries, and more— form a vernacular archive: a record of cultural influences and heritage written across the city's storefronts. This project asks whether those patterns can be systematically mapped, and whether they correlate with the city's socioeconomic geography.      </p>
+    </div>
+
+    <div class="proj-section">
+      <div class="proj-section-title">The Process</div>
+      <div class="proj-section-body">
+        <p>
+          Venue data was collected from OpenStreetMap via the Overpass API and filtered to the administrative boundary of Buenos Aires. Names were classified into cultural motifs through a three-stage pipeline: (1) regex-based rules for each motif as a first pass to catch straightforward cases; (2) LLM classification via Ollama (Mistral 7B Instruct); and (3) manual labeling and reviewing.
+        </p>
+        <p>
+          Each venue was spatially joined with neighborhood and district (<i>comuna</i>) boundaries. Motif distributions were aggregated at the district level, and Pearson correlations were computed against income and average age.
+        </p>
+      </div>
+    </div>
+    <div class="section-img-full section-img-full--small">
+      <img src="images/naming-database.png" alt="Database showing venue attributes and motif classification"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Map - italian motifs</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Database view — venue attributes and motif classification
+    </div>   
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Visualization</div>
+    <div class="proj-section-body">
+      <p>
+        The project offers two complementary views of the data. A point map shows each venue as a dot colored by its cultural motif, revealing fine-grained spatial patterns across the city. A choropleth aggregates these patterns, showing how motifs concentrate at the district level.
+      </p>
+      <p>
+        Several relationships emerge. For example, Anglophone and French-named venues correlate with wealthier, older neighborhoods, while names tied to Argentine folklore and local culture show the inverse, concentrating in lower-income, younger areas. These and other patterns suggest that naming is not arbitrary, and invite further questions about what drives these distributions, from heritage and aspiration to audience-signaling.
+      </p>
+    </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/naming-map.png" alt="Motif explorer map of Buenos Aires venues"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Map</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Motif explorer map — venues colored by cultural classification
+    </div>
+  </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/naming-italian.png" alt="Map showing motif distribution by comuna"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Motif explorer map — italian motif selected
+    </div>    
+
+    <div class="proj-live-wrap proj-live-wrap--bottom">
+      <a class="proj-live-btn" href="https://lara-yeyati-preiss.github.io/naming_a_city/index.html" target="_blank">
+        See live site <span class="proj-live-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="proj-back-bottom">
+    <a class="proj-back" href="index.html">&#8592; All work</a>
+  </div>
+
+  <footer>
+    <span class="footer-year">&#169; 2025</span>
+    <a href="mailto:larayeyati@gmail.com" class="footer-email">larayeyati&#64;gmail.com</a>
+  </footer>
+
+</body>
+</html>

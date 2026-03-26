@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatomy of a Horror Hit — Lara Yeyati Preiss</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Archivo:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Lara Yeyati Preiss</a>
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="proj-back-top">
+    <a class="proj-back" href="index.html">&#8592; All work</a>
+  </div>
+
+  <div class="proj-header">
+    <div>
+      <div class="proj-context">Data Visualization — Film, Culture, and Classification</div>
+      <h1 class="proj-title">Anatomy of a Horror Hit</h1>
+      <p class="proj-summary">
+        Horror films are a cultural barometer: capturing, distorting, and projecting collective fears back to us. Using Netflix’s Engagement Report for January to June 2025, this project examines what the platform’s most-watched horror titles reveal about the anxieties shaping contemporary popular culture.
+      </p>
+      <a class="proj-live-btn" href="https://lara-yeyati-preiss.github.io/anatomy-of-a-horror-hit/" target="_blank">
+        See live site <span class="proj-live-arrow">&#8599;</span>
+      </a>
+    </div>
+
+    <div class="proj-meta-sidebar">
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Role</div>
+        <div class="proj-meta-value">Concept, data analysis, classification design, and development</div>
+      </div>
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Data</div>
+        <div class="proj-meta-value">Netflix Engagement Report (Jan–Jun 2025), OMDb API, IMDb data, TMDB API</div>
+      </div>
+      <div class="proj-meta-item">
+        <div class="proj-meta-label">Methods</div>
+        <div class="proj-meta-value">LLM-assisted classification, manual review, keyword aggregation, visual analysis</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-header-divider"></div>
+
+  <div class="proj-video-section">
+    <div class="proj-video-container proj-video-container--vimeo-large">
+      <div class="video-ratio video-ratio--clean" id="horror-player-wrap">
+        <iframe
+          id="horror-vimeo"
+          src="https://player.vimeo.com/video/1176943227?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="anatomy-of-a-horror-hit">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+<div class="proj-section">
+  <div class="proj-section-title">The Challenge</div>
+  <div class="proj-section-body">
+    <p>
+      Netflix’s Engagement Report (Jan–Jun 2025) captures aggregate viewing across all genres on the platform. The challenge was to move beyond this broad distribution and surface more specific, interpretable patterns within it: not just what is watched, but what kinds of narratives and themes dominate attention.
+    </p>
+    <p>
+    The horror genre serves as a focused entry point for this analysis. From a cultural perspective, it translates diffuse tensions and anxieties into recognizable narrative forms, making it particularly suited for structured analysis. From an industry perspective, horror has grown from a niche genre into one of the most <a href="https://www.washingtonpost.com/entertainment/movies/2024/08/01/horror-movies-growing-genre/" target="_blank">commercially significant categories in contemporary film</a>, accounting for <a href="https://www.reuters.com/business/media-telecom/studios-bet-horror-films-reanimate-cinemas-2025-07-05" target="_blank">a record 17% of North American ticket sales</a> in 2025.</p>
+  </div>
+</div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Concept</div>
+    <div class="proj-section-body">
+      <p>
+        The project approaches horror as a cultural barometer, treating a large set of popular titles as a corpus through which contemporary fears can be mapped, compared, and grouped.
+      </p>
+      <p>
+        At its core is a classification system that assigns each film a primary fear category, allowing the analysis to move from individual titles to a broader structure of recurring themes.
+      </p>
+    </div>
+
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Process</div>
+    <div class="proj-section-body">
+      <p>
+        Film metadata was compiled from Netflix’s Engagement Report and enriched through OMDb, IMDb, and TMDB. Each title was then classified by core fear using a hybrid workflow: a local LLaMA-3 8B model run via Ollama, prompted with the film’s title, synopsis, and keywords, and guided by a manually designed taxonomy.
+      </p>
+      <p>
+        Model outputs were then manually reviewed and refined. Categories were consolidated into three higher-order supergroups reflecting broader dimensions of recurring fears.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="proj-section">
+    <div class="proj-section-title">The Visualization</div>
+    <div class="proj-section-body">
+      <p>
+        The project opens with a hit matrix comparing all genres by total views and IMDb rating, situating horror within a larger field of popular film consumption. It then narrows to horror itself, showing which fear categories dominate the genre, which patterns recur across subgroups, and how titles are distributed geographically.
+      </p>
+    </div>
+
+    <div class="section-img-full section-img-full--small">
+        <img src="images/horror-matrix.png" alt="Genre comparison matrix of Netflix's most-watched films"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="section-img-full-ph" style="display:none;">Genre comparison matrix</div>
+      </div>
+
+      <div class="img-caption img-caption--small">
+        Genre comparison matrix plotting popularity against critical reception
+      </div>
+    </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/horror-fears.png" alt="Distribution of horror titles by core fear"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Fear distribution chart</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Distribution of horror titles by core fear category
+    </div>
+  </div>
+
+    <div class="section-img-full section-img-full--small">
+      <img src="images/horror-map.png" alt="Geographic distribution of horror film production countries"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="section-img-full-ph" style="display:none;">Horror production map</div>
+    </div>
+
+    <div class="img-caption img-caption--small">
+      Geographic distribution of horror titles by production country
+    </div>
+
+    <div class="proj-live-wrap proj-live-wrap--hero proj-live-wrap--bottom">
+      <a class="proj-live-btn" href="https://lara-yeyati-preiss.github.io/anatomy-of-a-horror-hit/" target="_blank">
+        See live site <span class="proj-live-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="proj-back-bottom">
+    <a class="proj-back" href="index.html">&#8592; All work</a>
+  </div>
+
+  <footer>
+    <span class="footer-year">&#169; 2025</span>
+    <a href="mailto:larayeyati@gmail.com" class="footer-email">larayeyati&#64;gmail.com</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
