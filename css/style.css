@@ -816,7 +816,7 @@ footer {
 
   .portfolio-grid {
     grid-template-columns: 1fr;
-    padding: 0 24px 36px;
+    padding: 24px 24px 36px;
     gap: 16px;
   }
 
