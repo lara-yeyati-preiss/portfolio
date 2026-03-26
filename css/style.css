@@ -825,6 +825,10 @@ footer {
   .card--illo-wide {
     grid-column: span 1;
   }
+  .card--illo-sm .card-media--sq-sm {
+    max-height: none;
+    aspect-ratio: 1/1;
+  }
 
   .proj-back-top { padding: 24px 0 0 24px; }
   .proj-back-bottom { padding: 28px 0 16px 24px; }
