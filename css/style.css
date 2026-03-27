@@ -843,6 +843,9 @@ footer {
   .section-img-full,
   .img-caption,
   .proj-live-wrap {
+    background: transparent;
+    padding-left: 24px;
+    padding-right: 24px;
     max-width: 100%;
   }
 }
