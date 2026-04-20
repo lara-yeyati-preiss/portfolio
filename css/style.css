@@ -152,6 +152,7 @@ nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
   object-fit: cover;
   display: block;
   transform: scale(1.002);
+  border: var(--rule) 1px solid;
 }
 
 .card-media-still {
@@ -210,7 +211,7 @@ nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
 }
 
 .card--dataviz .card-desc {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
   color: var(--soft);
   font-weight: 400;
@@ -321,10 +322,10 @@ footer {
   gap: 8px;
   font-family: var(--mono);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--mid);
+  color: var(--ink);
   cursor: pointer;
   background: none;
   border: none;

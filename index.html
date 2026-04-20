@@ -22,6 +22,37 @@
 <main>
   <div class="portfolio-grid">
 
+    <!-- PUBLISHED -->
+    <div class="section-header">
+      <h2 class="section-title">Published</h2>
+    </div>
+
+    <a class="card card--dataviz card--published" href="project-vaccines-cfr.html">
+      <div class="card-media">
+        <img class="card-media-still" src="images/vaccines_header.png" alt="Vaccine Skepticism Has Risen in the U.S.—And in Many Other Countries" onerror="this.style.opacity='0'">
+        <div class="card-media-ph">images/vaccines_header.png</div>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">Council on Foreign Relations · Article &amp; Charts</div>
+        <h2 class="card-title">Vaccine Skepticism Has Risen in the U.S.—And in Many Other Countries</h2>
+        <p class="card-desc">Graphic article exploring rising vaccine skepticism as a global trend, and the threat it poses to decades of progress that took generations to build.</p>
+        <div class="card-hint">Read article <span class="hint-arr">↗</span></div>
+      </div>
+    </a>
+
+    <a class="card card--dataviz card--published" href="project-measles-cfr.html">
+      <div class="card-media">
+        <img class="card-media-still" src="images/measles_cover.png" alt="Many Countries Eliminated Measles. Why Is It Coming Back in the U.S. and Globally?" onerror="this.style.opacity='0'">
+        <div class="card-media-ph">images/measles_map.png</div>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">Council on Foreign Relations · Charts</div>
+        <h2 class="card-title">Mapping the Resurgence of Measles</h2>
+        <p class="card-desc">Editorial charts tracing where measles has returned, how vaccination coverage shifted after the pandemic, and why the U.S. is again at risk.</p>
+        <div class="card-hint">View charts <span class="hint-arr">↗</span></div>
+      </div>
+    </a>
+
     <!-- DATA STORIES -->
     <div class="section-header">
       <h2 class="section-title">Data Stories</h2>
@@ -119,17 +150,25 @@
 
 <footer>
   <span class="footer-year">&#169; 2025</span>
-  <a href="/cdn-cgi/l/email-protection#91fdf0e3f0e8f4e8f0e5f8d1f6fcf0f8fdbff2fefc" class="footer-email">larayeyati&#64;gmail.com</a>
+  <a href="mailto:larayeyati@gmail.com" class="footer-email">larayeyati&#64;gmail.com</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  document.querySelectorAll('.card--dataviz').forEach(card => {
+<script>
+  document.querySelectorAll('.card--dataviz:not(.card--published)').forEach(card => {
     const video = card.querySelector('.card-media-gif');
     if (!video) return;
     let loaded = false;
     card.addEventListener('mouseenter', () => {
       if (!loaded && video.dataset.src) { video.src = video.dataset.src; video.load(); loaded = true; }
-          if (video.src) video.play().catch(() => {});
-        });
-      });
-    </script>
+      if (video.src) video.play().catch(() => {});
+    });
+  });
+</script>
+<style>
+  .card--published:hover .card-media-still { opacity: 1; }
+  .card--published .card-media { background: transparent; }
+  .card--published:hover { opacity: 1; }
+  .card--published:hover .card-hint { opacity: 1; transform: translateY(0); }
+</style>
+</body>
+</html>
